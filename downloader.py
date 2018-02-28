@@ -33,6 +33,13 @@ def get_article_list(url):
         article_list.append(parse_article(article))
     return article_list
 
+
+def get_text(article):
+    text = ''
+    for tag in article:
+        text = text + tag.name + ' : ' + tag.text + '\n '
+    return text
+    
 os.chdir('data')
 url_list = get_article_urls()
 i = 0
@@ -47,7 +54,8 @@ for url in url_list:
             articles = get_article_list(url)
             if len(articles) > 0:
                 article = articles[0]
-                text = str(article)
+                
+                text = get_text(article)
                 with open('{}'.format(name), 'w') as f:
                     f.write(str(text))
                     i = i + 1

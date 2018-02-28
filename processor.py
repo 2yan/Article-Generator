@@ -39,7 +39,15 @@ def process_and_move():
                         '’':'\'',
                         '“':'\'',
                         '”':'\'',
-                        
+                        '|':'',
+                        '&':'and',
+                        '[':'(',
+                        ']':')',
+                        '™':'(TM)',
+                        '%':' percent ',
+                        '#':' number ',
+                        '<':'(',
+                        '>':')',
                         }
     
         for key in replacements.keys():
